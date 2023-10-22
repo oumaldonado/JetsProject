@@ -5,11 +5,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public abstract class Jet {
 	
 	protected String name;
-	private String model;
+	protected String model;
 	protected int  topSpeedMph;
 	protected int rangeInMiles;
 	protected double priceInDollars;
@@ -71,8 +72,27 @@ public abstract class Jet {
 
 	@Override
 	public String toString() {
-		return "Jet [name: " + name + ", model: " + model + ", topSpeedMph: " + topSpeedMph + ", rangeInMiles: "
-				+ rangeInMiles + ", priceInDollars: " + priceInDollars + " ]";
+		return "Jet [ Name: " + name + ", Model: " + model + ", TopSpeed Mph: " + topSpeedMph + ", Range in Miles: "
+				+ rangeInMiles + ", Price in Dollars: " + priceInDollars + " ]";
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(model, name, priceInDollars, rangeInMiles, topSpeedMph);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Jet other = (Jet) obj;
+		return Objects.equals(model, other.model) && Objects.equals(name, other.name)
+				&& Double.doubleToLongBits(priceInDollars) == Double.doubleToLongBits(other.priceInDollars)
+				&& rangeInMiles == other.rangeInMiles && topSpeedMph == other.topSpeedMph;
 	}
 	
 	

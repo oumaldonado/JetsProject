@@ -9,14 +9,14 @@ public class CargoJet extends Jet implements CargoCarrier {
 	@Override
 	public void fly() {
 		int flightTime;
-		flightTime = topSpeedMph /rangeInMiles;
-		System.out.println("BRRRRRhhhhhhhhsssss!! " + name +" Time In Air: " + flightTime);
+		flightTime = rangeInMiles/topSpeedMph;
+		System.out.println("BRRRRRhhhhhhhhsssss!! " + name +" Time In Air: " + flightTime +"Hrs" );
 	}
 
 	@Override
 	public void load() {
 		// TODO Auto-generated method stub
-		System.out.println("loading cargo....");
+		System.out.println(model + " loading cargo....");
 	}
 	
 

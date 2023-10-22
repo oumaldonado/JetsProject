@@ -8,7 +8,9 @@ public class PassengerJet extends Jet {
 
 	@Override
 	public void fly() {
-		
+		int flightTime;
+		flightTime = rangeInMiles/topSpeedMph ;
+		System.out.println("GGGHHHHERRRRRhhsssss!! " + name +" Time In Air: " + flightTime + "Hrs");
 	}
 
 }

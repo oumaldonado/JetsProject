@@ -8,6 +8,7 @@ public class FighterJet extends Jet implements CombatReady{
 
 	@Override
 	public void fight() {
+		fly();
 		System.out.println(" pew pew pew pew ");
 		// TODO Auto-generated method stub
 		
@@ -17,7 +18,7 @@ public class FighterJet extends Jet implements CombatReady{
 	public void fly() {
 		int timeInAir ;
 		timeInAir = rangeInMiles / topSpeedMph;
-		System.out.println("zhhhhhhhhsssss!! " + name +" Time In Air: " + timeInAir);
+		System.out.println("zhhhhhhhhsssss!! " + model +" Time In Air: " + timeInAir + "Hr");
 	}
 
 	

@@ -2,3 +2,4 @@ CargoJet, A330, 700, 7000, 1000000.0
 FighterJet, F-22, 1500, 1800, 20000000.0
 Passenger, Boeing 747, 7500, 610, 1234234.0 
 FighterJet, F-16, 1200, 6500, 210, 12312.0 
+CargoJet, Airbus-232, 750, 7500, 100234.0

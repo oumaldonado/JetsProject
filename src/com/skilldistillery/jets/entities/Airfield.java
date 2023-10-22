@@ -7,16 +7,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Airfield {
-	
+	String filename = "jets.txt";
 	private List<Jet> jetsArraylist = new ArrayList<>();
 	public Airfield() {
 		readJets();
-		
 	}
-	
 
 	public List<Jet> readJets() {
-		try (BufferedReader bufIn = new BufferedReader(new FileReader("jets.txt"))) {
+		try (BufferedReader bufIn = new BufferedReader(new FileReader(filename))) {
 			String line;
 			while ((line = bufIn.readLine()) != null) {
 				Jet jets;
@@ -44,10 +42,29 @@ public class Airfield {
 		}
 		return jetsArraylist;
 	}
-	
 
 	public void flyAllJets() {
+		for (Jet jet : jetsArraylist) {
+			jet.fly();
+		}
+	}
 
+	public void loadCargo() {
+		for (Jet jet : jetsArraylist) {
+			if (jet instanceof CargoJet) {
+				((CargoJet) jet).load();
+				
+			}
+		}
+
+	}
+	public void fight() {
+		for (Jet jet : jetsArraylist) {
+			if (jet instanceof FighterJet) {
+				((FighterJet) jet).fight();
+			}
+			
+		}
 	}
 
 	public List<Jet> getJetsArraylist() {
