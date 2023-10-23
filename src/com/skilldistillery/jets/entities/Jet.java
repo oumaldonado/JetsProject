@@ -8,27 +8,23 @@ import java.util.List;
 import java.util.Objects;
 
 public abstract class Jet {
-	
+
 	protected String name;
 	protected String model;
-	protected int  topSpeedMph;
+	protected int topSpeedMph;
 	protected int rangeInMiles;
 	protected double priceInDollars;
-	
-	
+
 	public Jet(String name, String model, int topSpeedMph, int rangeInMiles, double priceInDollars) {
 		this.name = name;
 		this.model = model;
 		this.topSpeedMph = topSpeedMph;
 		this.rangeInMiles = rangeInMiles;
 		this.priceInDollars = priceInDollars;
-		
-		
+
 	}
-	
-	public abstract void  fly (); 
-			
-	
+
+	public abstract void fly();
 
 	public String getName() {
 		return name;
@@ -94,8 +90,5 @@ public abstract class Jet {
 				&& Double.doubleToLongBits(priceInDollars) == Double.doubleToLongBits(other.priceInDollars)
 				&& rangeInMiles == other.rangeInMiles && topSpeedMph == other.topSpeedMph;
 	}
-	
-	
 
 }
-
